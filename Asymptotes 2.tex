@@ -1,0 +1,252 @@
+
+\documentclass[12pt]{article}
+\title{Asymptotic Behavior in Rational Functions}
+\author{Will Hanstedt}
+\date{May 22, 2018}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The behavior of rational functions around asymptotes, especially 		% Scan all for consistent use of terminology
+horizontal and so-called ``oblique" asymptotes, is poorly taught 
+and poorly understood in the context of high school algebra. It is
+necessary to define a new approach to such topics, for the purpose
+of better understanding and simpler computation on the part of 
+students. In this, we will outline an alternative method for 
+finding asymptotes for students and a new way to think about 
+rational expressions for teachers.
+\end{abstract}
+
+\section{Background}
+\subsection{Rational Functions}
+
+A rational function is any function that can be represented as a 
+fraction where the numerator and denominator are 
+polynomials.\footnote{Wikipedia}
+This includes, but is not limited to, examples such as 
+
+	\[\frac{1}{x^{3}}\ \ \ \ 
+\textnormal{or}\ \ \ \  
+	\frac{x-2}{x+2}\ \ \ \ 
+\textnormal{or}\ \ \ \ 
+	\frac{4x^{4}+3x^{3}+2x^{2}+x}{x-1}\]
+
+Despite the fact that polynomials themselves may have domains 
+that encompass the set of real numbers $\mathbb{R}$ (and indeed the set of
+complex numbers $\mathbb{C}$ as well), many rational functions have restrictions 
+in their domains. This can be demonstrated by inputting $-2$ into
+	\(\frac{x-2}{x+2}\).
+The result is undefined, and the surrounding function behaves asymptotically.\\
+
+The tendency of the funtion towards infinity or negative infinity around
+this $x$ value is refered to as a vertical asymptote, because the function,
+as one moves up or down the output values, approaches the asymptotic input,
+but does not reach it. This accelerated growth of the input occurs because,
+as the denominator of the fraction approaches 0, the fraction itself becomes
+larger and larger.\\
+
+Likewise, a graph of the same function reveals that, as we follow the graph
+towards \(x = +\infty \), the output tends towards \(f(x) = 1\). Logically, this
+is sensible; as the $x$ in the numerator and the $x$ in the denominator both
+increase, the effects of the $\pm 2$ become negligible. Note, however, that, 
+just as with the vertical asymptote, the output of 1 is never reached, because 
+of the slight difference between the numerator and denominator. \\
+
+\subsection{Motivation}
+
+The method commonly taught for finding asymptotes is patchwork at
+best. Finding vertical asymptotes is accomplished through a method 
+similar to the one described here, so it will be covered later. But to 
+discover horizontal or oblique asymptotes, the process is more 
+complicated.\\
+
+First, students note the highest powers of the input variable in both
+the numerator and denominator of the function. If the power of the 
+numerator is (exactly) one power higher, then it is a slant asymptote. If one wants to 
+find the equation of that asymptote, one then must do long division
+(as described below). If the powers of the numerator and 
+denominator are the same or the numerator has the lesser power,
+it is a horizontal asymptote. In the case of the former, the ratio of
+the coefficients gives the output value of the asymptote. In the case 
+of the latter, the asymptote is at $f(x) = 0$.\\
+
+Unfortunately, this method for determining the presence of 
+non-vertical asymptotes relies entirely on the memory of the student. 
+They must remember two different rules and when to use each of
+three methods to find the asymptote. 
+It also depends on the end     % Effect of long division on holes?
+behavior of the graphs, which in turn relies on computation involving infinities, a 
+concept with unnecesary complications for the high school level. \\			%Use in graphing
+
+These shortcomings of the current method couple with a few benefits
+of a more reliable method. For one, a better way of finding asymptotes
+will assist in graphing (the bane of any algebra student's existence). 
+In addition, this method can be better used to predict actual behavior 
+around non-vertical asymptotes, as we will see later.\\
+
+\subsection{Holes}			% Write this. Explain terminology and note important things
+
+\section{The Two-Form Method}
+
+In this section, we will introduce a new method for approaching 		%Differentiate btw "original" and "given"
+rational functions in order to discover asymptotic behavior. As the
+name implies, this method relies on converting the given form of
+a rational funtion into two different, distinct forms, in order to 
+obtain information about asymptotic behavior.\\
+
+\subsection{Factored Form}
+
+We start with the form closest to the conventional method, the 
+factored version of the rational function. This will give us domain 
+restrictions and zeroes of the function. Obtaining this form is 
+relatively simply: we just find the factored forms of the numerator
+and denominator of the function. For instance, 
+	\[\frac{x^2-3x+2}{x^2-4x+3} \ \ \ \ 
+	\textnormal{becomes} \ \ \ \ 
+	\frac{(x-2)(x-1)}{(x-3)(x-1)}\]
+
+Note that the original form is functionally identical to the factored
+form. Graphs of the two will demonstrate this. Importantly, this
+means that, as any one of the individual factors approaches
+zero, the numerator or denominator will also approach
+zero. As the numerator of the function approaches zero, the function
+itself will approach 
+	\(\displaystyle\frac{0}{g(x)}\)
+, meaning that, unless whatever $g(x)$ is evaluates to zero at that same input 		% Space before comma and format of fraction?
+coordinate, the function will have a zero at that input. \\
+
+As the denominator of the function approaches zero, however, the 
+function will approach 
+$\pm\infty$.\footnote{Except, as we will see, in the case of ``holes."} 
+Thus, each zero of the polynomial in the denominator is a vertical asymptote.\\
+
+\subsection{Divided Form}
+
+This second form for the function is the key part of the new 
+approach. Essentially, we will  express the rational function
+as the sum of a polynomial and a remainder, an 
+indivisible rational function. This will, most importantly, always 
+identify horizontal or oblique asymptotes, without the need for
+the many conditions of the conventional method.\\
+
+In order to obtain this form from the given, we simply use 		% Explain long division
+polynomial long division. This leaves us with a polynomial
+(the highest power of which will be the difference of the 
+highest power of the numerator and the highest power of
+the denominator of the given), and a remainder, a rational 
+function that cannot be further divided (that is, the highest
+power of its numerator is less than the highest power of 
+its denominator). We may, for the time being, ignore the 
+remainder and focus on the polynomial.\\
+
+The polynomial part of the divided form is the non-vertical
+asymptote. If one were to isolate that portion of the function		%image example
+and graph it alongside the given, that would be clear. The power
+of the input variable in the polynomial function determines the 
+type of asymptote created, just as it would an actual polynomial. 
+If it is raised to the first power, the
+asymptote is oblique, while having no input variables present
+creates a horizontal asymptote. As should be clear, this eliminates
+the need for analyzing the given to discover the type of asymptote,
+as most algebra students can better handle polynomials than 
+rational functions themselves. \\
+
+To better understand this, let us consider an example. Using		%formatting?
+long division,
+\begin{equation} 
+	\frac{x^{3}+3x^{2}-10x-24}{x^{2}-3x+2}\ \ \ \ 
+	\textnormal{reduces to}\ \ \ \ 
+	 x+6 + \frac{6x-36}{x^{2}-3x+2}
+\end{equation}
+
+The asymptote can be described by $f(x) = x+6$. Because this	%indivisibles and y = 0
+function has slope, the asymptote is oblique. Had we used the 
+current method, we would have first had to check the powers
+of the input variable, remembered the type of asymptote to 
+which the positive difference corresponds, and then still do
+long division to find the actual equation of the asymptote. The
+method being proposed eliminates the need to remember the 
+cases, because it relies on intuition of polynomials that students 
+should already have.\\
+
+One way to think about this method (for teachers or more invested		% Change word "transformation"
+students) is as a transformation of a polynomial. The asymptote may 
+be thought of as the ``original" function (note the distinction with the
+``given" functions described earlier), and the irreducible rational 
+expression that is added --- the remainder --- as the transformation 
+upon the original function. After one adds the two (original and 		%talk about how powers work, how current method is constructed
+transformation) together, the result may be transformed to a rational 
+function in the form with which we are familiar (the ``given" form) by 
+finding a common denominator between the two and multiplying the 	% How do holes appear?
+original by an identity that will give it this denominator. \\
+
+This transformation has a few consequences:
+the asymptotes themselves. As the input approaches one of the domain 
+restrictions in the transformational expression (provided it is not a ``hole"),
+the tranformation part of the expression will grow, creating deviation from
+the original in the transformed function. Thus, the rational function created
+has the same vertical asymptotes as the transformation itself did. But,
+as the input progresses further from the domain restrictions, the 
+the transformation tends towards zero. This is because, since the 
+tranformation is required to be irreducible by the method of long 
+division used, the power of the denominator is smaller than that of
+the numerator, and thus grows more rapidly than the numerator.
+But, if this tendency towards zero is added to the original function,
+it becomes a tendency towards the original function, or an asymptote.\\
+
+It may be noted, if the example above were to be graphed, that	%Move to sec. 3?
+the function itself actually crosses the oblique asymptote. This is 
+explained by the distinction made between vertical and non-vertical
+asymptotes: vertical asymptotes are created by domain restrictions
+such as the ones described in 2.1, but horizontal and slant asymptotes
+are created whenever a vertical asymptote is added, through the 
+transformation described. Vertical asymptotes are the only type
+whose implementation requires that the points on the asymptote
+are never reached by the function. Because horizontal and oblique 
+asymptotes are determined by the value of the remainder at a
+given input, the asymptote can be crossed at the zeroes of the
+transformation function. In the case of the above example, $x=6$
+makes the remainder evaluate to zero, and thus the asymptote 
+is crossed.\\
+
+\section{Further Benefits}
+
+This new method, and the accompanying interpretation, carry with
+them some opportunities for generalization. For example, the 
+old method only allows for a difference of powers (numerator
+minus denominator) of one or less. This method, however, equips 
+us to deal with other varieties of rational functions. Consider, for 		%figure out how formatting works
+instance,
+\begin{equation}
+	\frac{x^{6}+2x^{5}-34x^{4}-52x^{3}+233x^{2}+50x-200}{x^{3}-5x^{2}-2x+24}
+\end{equation}
+(not, unfortunately, a very appealing equation). Factoring reveals it
+to be equivalent to 
+\begin{equation}
+	\frac{(x+1)(x-1)(x-2)(x+4)(x-5)(x+5)}{(x+2)(x-3)(x-4)}
+\end{equation}
+while long division yields
+\begin{equation}
+	x^{3}+7x^{2}+3x-47+\frac{-164x^{2}-116x+928}{x^{3}-5x^{2}-2x+24}
+\end{equation}
+This is difficult enough to deal with (or graph) without the fact that 
+the commonly used method for dealing with this simply cannot account 
+for this type of problem. But looking at the two forms, we can clearly
+see how to approach this problem. From our divided form, we find
+that the asymptote has the equation \(x^{3}+7x^{2}+3x-47\). It is 
+neither oblique nor horizontal, but a higher-powered --- a cubic, 
+to be precise --- function. This is, for lack of a proper term, a 
+curved asymptote. Furthermore, by solving the numerator of the 
+remainder at zero, we find that the given function crosses the
+asymptote at $x=\displaystyle\frac{-29\pm3\sqrt{4321}}{82}$.\footnote{Some
+graphing utilities may display another crossing at $x=3$, but evaluating
+this directly will reveal a vertical asymptote. }
+
+\end{document}
+
+
+
